@@ -2,8 +2,8 @@ import requests
 import time
 
 # Management server URL
-MANAGEMENT_SERVER_URL = 'http://192.168.1.129:5000/submit'
-RESULT_SERVER_URL = 'http://192.168.1.129:5000/result'  # URL to get the result of the task
+MANAGEMENT_SERVER_URL = 'https://341c4afa-8bf5-4be0-98cc-58fcaa34ec3d-00-3h6liyqmowb1.worf.replit.dev/submit'
+RESULT_SERVER_URL = 'https://341c4afa-8bf5-4be0-98cc-58fcaa34ec3d-00-3h6liyqmowb1.worf.replit.dev/result'  # URL to get the result of the task
 
 def submit_task(prompt, model='llama3'):
     """ Submits the task to the management server. """

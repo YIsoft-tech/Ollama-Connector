@@ -2,7 +2,7 @@ import time
 import requests
 
 # Your Azure Web App URL
-AZURE_WEB_APP_URL = 'http://192.168.1.129:5000/task'
+AZURE_WEB_APP_URL = 'https://341c4afa-8bf5-4be0-98cc-58fcaa34ec3d-00-3h6liyqmowb1.worf.replit.dev/task'
 
 # Ollama local server URL
 OLLAMA_API_URL = 'http://localhost:11434/api/generate'
