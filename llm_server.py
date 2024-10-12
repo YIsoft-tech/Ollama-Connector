@@ -1,6 +1,5 @@
 import time
 import requests
-import json
 
 # Your Azure Web App URL
 AZURE_WEB_APP_URL = 'http://192.168.1.129:5000/task'
@@ -11,9 +10,9 @@ OLLAMA_API_URL = 'http://localhost:11434/api/generate'
 def call_ollama(model, prompt):
     """ Calls the Ollama API on the local machine with the given model and prompt. """
     payload = {
-        "model": model,  # For example: "llama3:70b" or "orca-mini:3b-q4_1"
+        "model": model,  
         "prompt": prompt,
-        "stream": False  # We want a single response instead of streamed chunks
+        "stream": False
     }
     response = requests.post(OLLAMA_API_URL, json=payload)
     if response.status_code == 200:
@@ -42,8 +41,7 @@ def send_result_to_azure(task_id, result):
     try:
         response = requests.post(AZURE_WEB_APP_URL, json={'task_id': task_id, 'result': result})
         if response.status_code == 200:
-            print("Result sent successfully.")
-            # You can consider removing the task from the LLM server if required
+            print(f"Result for task {task_id} sent successfully.")
         else:
             print(f"Failed to send result: {response.status_code}")
     except Exception as e:
@@ -52,5 +50,4 @@ def send_result_to_azure(task_id, result):
 if __name__ == '__main__':
     while True:
         check_for_task()
-        time.sleep(1)  # Poll every 1 second
-        print("Checking for tasks...")
+        time.sleep(0.5)  # Poll every 1/2 seconds

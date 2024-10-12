@@ -150,6 +150,13 @@ To set up the Ollama model server locally, follow these steps:
   - `POST /task`: Accepts results from the LLM Server.
   - `GET /result/<task_id>`: Returns the result of a completed task.
 
+### `test.py`
+
+- **Functionality**: This script interacts with the Manage Server to submit tasks and wait for results.
+- **Main Functions**:
+  - `submit_task(prompt, model)`: Submits a new task to the Manage Server.
+  - `wait_for_result(task_id)`: Polls the Manage Server for the result of the submitted task.
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
